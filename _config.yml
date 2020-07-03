@@ -1,0 +1,86 @@
+# Site/SEO settings
+email: kekehurry@hotmail.com
+baseurl: ""
+permalink: /:year/:month/:day/:title/
+google_analytics: 
+
+name: Kaius
+title: Kaius' Notebook
+description: >
+  Who can deny the joy it brings, when you find the special thing.
+url: http://kekehurry.github.io
+twitter_username: kaius
+default_img: /assets/images/seo.jpg
+social:
+  - name: twitter
+    url: https://twitter.com/
+  - name: instagram
+    url: https://www.instagram.com/
+  - name: linkedin
+    url: https://www.linkedin.com/in/
+  - name: github
+    url: https://github.com/kekehurry
+  - name: codepen
+    url: https://codepen.io/
+
+# Contact settings
+contact_img: /assets/images/placeholder-28.jpg
+formcarry: https://formcarry.com/
+
+# Disqus settings
+disqus: test-apkdzgmqhj
+
+# MailChimp settings
+mailchimp_action: https://samesies.us17.list-manage.com/subscribe/post-json?u=66ddf555dab480e6a8606430b&amp;id=89b3ee034f
+mailchimp_input: b_66ddf555dab480e6a8606430b_89b3ee034f
+
+# Author settings
+author:
+  - name: Kaius
+    bio: An architecture interested in programming and data analysis.
+    url: http://kekehurry.github.io
+
+# Pagination settings
+pagination:
+  enabled: true
+  debug: false
+  per_page: 12
+  permalink: '/page/:num/'
+  title: ':title'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+autopages:
+  enabled: true
+  categories:
+    enabled: false
+  collections:
+    enabled: false
+  tags:
+    layouts: 
+      - 'tag.html'
+    title: 'The Barber Theme'
+    permalink: '/tag/:tag'
+    slugify:
+      mode: raw
+      cased: true
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-paginate-v2
+  - jekyll-sitemap
+compress_html:
+  clippings: all
+  comments: all
+  startings: [html, head, body]
+exclude:
+  - node_modules
+  - .DS_Store
+  - barber.jpg
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.js
+  - package.json
+  - README.md
+  - vendor
