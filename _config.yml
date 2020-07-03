@@ -12,7 +12,8 @@ locale:              ch # eg. en_us
 name:				         Kaius' Notebook
 title:               Kaius
 tagline:             'who can deny the joy it brings'
-description:         'who can deny the joy it brings, when you find the special thing'
+description:         >
+  'who can deny the joy it brings, when you find the special thing'
 url:                 kekehurry.github.io
 rss:                 rss feed url
 baseurl:             '/'
@@ -38,9 +39,9 @@ fb_admins:           your facebook profile id
 fb_appid:            your facebook app id
 
 # Server
-destination:      	 ./_site
-exclude:          	 [".editorconfig", ".gitignore", "bower.json", "composer.json", "CONTRIBUTING.md", "CNAME", "LICENSE", "Gruntfile.js", "package.json", "node_modules", "README.md", "sass", "haml"]
-port:             	 9001
+# destination:      	 ./_site
+# exclude:          	 [".editorconfig", ".gitignore", "bower.json", "composer.json", "CONTRIBUTING.md", "CNAME", "LICENSE", "Gruntfile.js", "package.json", "node_modules", "README.md", "sass", "haml"]
+# port:             	 9001
 
 defaults:
   -
