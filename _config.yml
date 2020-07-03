@@ -5,16 +5,16 @@ highlighter:         rouge
 
 # Permalinks
 permalink:           /:title
+relative_permalinks: true
 
 # Setup
-timezone:            Asia/Beijing # eg. Asia/Kathmandu
-locale:              ch # eg. en_us
-name:				         Kaius' Notebook
-title:               Kaius
-tagline:             'who can deny the joy it brings'
-description:         >
-  'who can deny the joy it brings, when you find the special thing'
-url:                 kekehurry.github.io
+timezone:            your timezone # eg. Asia/Kathmandu
+locale:              your locale language # eg. en_us
+name:				         site name
+title:               site title
+tagline:             'tagline'
+description:         'description'
+url:                 site url
 rss:                 rss feed url
 baseurl:             '/'
 baseurl_posts_img:   '/assets/images/posts/'
@@ -25,8 +25,8 @@ icon:                your site icon path # /assets/img/icon.png [best 300px X 30
 disqus:              disqus_shortname # get it on https://disqus.com/admin/
 
 author:
-  name:           	 Kaius
-  url:            	 kekehurry.github.io
+  name:           	 your name
+  url:            	 your site url
   facebook:          username
   twitter:           username
   google_plus:       username
@@ -39,9 +39,9 @@ fb_admins:           your facebook profile id
 fb_appid:            your facebook app id
 
 # Server
-# destination:      	 ./_site
-# exclude:          	 [".editorconfig", ".gitignore", "bower.json", "composer.json", "CONTRIBUTING.md", "CNAME", "LICENSE", "Gruntfile.js", "package.json", "node_modules", "README.md", "sass", "haml"]
-# port:             	 9001
+destination:      	 ./_site
+exclude:          	 [".editorconfig", ".gitignore", "bower.json", "composer.json", "CONTRIBUTING.md", "CNAME", "LICENSE", "Gruntfile.js", "package.json", "node_modules", "README.md", "sass", "haml"]
+port:             	 9001
 
 defaults:
   -
