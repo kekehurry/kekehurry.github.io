@@ -1,50 +1,52 @@
-title: Sleek # your site title
-author: GitHub User
-email: your-email@domain.com # email for form submission, you also have to change it in _js/scripts.js
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://janczizikow.github.io/sleek" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jan_czizikow # replace with your_twitter_username or comment to remove link from footer
-github_username:  janczizikow # replace with your_github_username or comment to remove link from footer
-instagram_username: shanlongjj # replace with your_instagram_username or comment to remove link from footer
-social:
-  name: Your Name
-  links:
-    - https://twitter.com/BenBalter
-    - https://www.facebook.com/ben.balter
-    - https://www.linkedin.com/in/BenBalter
-    - https://plus.google.com/+BenBalter
-    - https://github.com/benbalter
-    - https://keybase.io/benbalter
 
-disqus:
-  shortname: janczizikow # to enable comments replace with your_disqus_shortname
+# Syntax highlighting
+markdown:            redcarpet
+highlighter:         pygments
 
-# Build settings
-markdown: kramdown
-highlighter: rouge # or pygments or null
-theme: jekyll-sleek
-exclude:
-  - README.md
-  - node_modules
-  - package.json
-  - package-lock.json
-  - Gemfile
-  - Gemfile.lock
-  - vendor
-  - npm-debug.log
-  - gulpfile.js
-  - sleek.png
+# Permalinks
+permalink:           /:title
+relative_permalinks: true
 
-include: ['_pages']
-permalink: /:title/
+# Setup
+timezone:            your timezone # eg. Asia/Kathmandu
+locale:              your locale language # eg. en_us
+name:				         site name
+title:               site title
+tagline:             'tagline'
+description:         'description'
+url:                 site url
+rss:                 rss feed url
+baseurl:             '/'
+baseurl_posts_img:   '/assets/images/posts/'
+baseurl_featured_img: '/assets/images/hero/'
+baseurl_featured_thumbnail: '/assets/images/thumbnail/'
+baseurl_javascripts: '/assets/javascripts/'
+icon:                your site icon path # /assets/img/icon.png [best 300px X 300px]
+disqus:              disqus_shortname # get it on https://disqus.com/admin/
 
-compress_html:
-  clippings: all
+author:
+  name:           	 your name
+  url:            	 your site url
+  facebook:          username
+  twitter:           username
+  google_plus:       username
+  linkedin:          username
+  dribbble:          username
+  pinterest:         username
+  kiva:              username
 
-plugins:
-  - jekyll-sitemap
-  - jekyll-seo-tag
+fb_admins:           your facebook profile id
+fb_appid:            your facebook app id
+
+# Server
+destination:      	 ./_site
+exclude:          	 [".editorconfig", ".gitignore", "bower.json", "composer.json", "CONTRIBUTING.md", "CNAME", "LICENSE", "Gruntfile.js", "package.json", "node_modules", "README.md", "sass", "haml"]
+port:             	 9001
+
+defaults:
+  -
+    scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "default"

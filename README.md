@@ -1,130 +1,131 @@
-[![Gem Version](https://badge.fury.io/rb/jekyll-sleek.svg)](https://badge.fury.io/rb/jekyll-sleek) [![Build Status](https://travis-ci.org/janczizikow/sleek.svg?branch=master)](https://travis-ci.org/janczizikow/sleek) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/janczizikow/sleek)
-# Sleek
+# Mickey
 
-A modern [Jekyll](https://jekyllrb.com/) theme focused on speed performance & SEO best practices.
+Mickey is a minimal one-column, responsive theme for [Jekyll](http://jekyllrb.com).
 
-## Features
+It's inspired by [Hyde](http://hyde.getpoole.com), [Medium](http://medium.com), and [Squarespace](http://squarespace.com).
 
-* Compatible with [Github Pages](https://pages.github.com/)
-* Minimal, responsive and speed performance optimized
-* SEO friendly, with help of [Jekyll SEO Plugin](https://github.com/jekyll/jekyll-seo-tag)
-* Easy [Google Tag Manager](https://tagmanager.google.com/) Integration
-* Support for [Disqus](https://disqus.com/) comments
-* Form submissions with [Formspree](https://formspree.io/)
+![Mickey screenshots](/assets/images/demo.png)
 
-[Preview Demo](https://janczizikow.github.io/sleek/)
+See Mickey in action with [the demo site](http://vincentchan.github.io/mickey) or [my personal blog](http://aneverendingdream.com).
+
+## Contents
+
+- [Installation](#installation)
+- [Options](#options)
+  - [Post front matter](#post-front-matter)
+  - [Identity](#identity)
+  - [Typography](#typography)
+  - [Images](#images)
+- [Development](#development)
+- [Author](#author)
+- [License](#license)
 
 ## Installation
 
-### System Requirements
+Mickey requires [Jekyll](http://jekyllrb.com/) 2.x. and [Gulp](http://gulpjs.com/) for workflow automation.
 
-To use this project, you'll need the following things on your local machine:
+Make sure to run `gem update jekyll` if you aren’t on the latest version or `gem install jekyll` if this is your first time installing it.
 
-#### Jekyll
+If you want to use Mickey, please follow these steps:
 
-```shell
-gem install jekyll
+1. Fork the [Mickey](https://github.com/vincentchan/mickey) repo.
+2. Clone the repo you just forked and rename it.
+3. Run `npm install` to install the dependencies for the theme contained in `package.json`
+4. Update `_config.yml` with your own info and replace demo posts and pages with your own. Full details below.
+
+## Options
+
+Mickey includes some customizable options:
+
+### Post front matter
+
+By default, we use the following:
+
+```
+---
+layout:           post
+title:            "your post title"
+date:             2015-02-11T13:04:19+05:45 # XML Schema Date/Time
+last_modified_at: 2015-03-15T05:20:00+05:45 # last page modified date/time
+excerpt:          "for meta description" # Optional for overwriting content excerpt
+categories:       your post categories # ["category1"] - best is to have one category in a post
+tags:             your post tags # ["tag1", "tag2", "tag3"] - you can have several post tags
+image:
+  feature: your post featured image file name # image.jpg, suggested size:  2000x700px
+  topPosition: 0px # top position for featured image if needed
+bgContrast: dark # Featured image contrast
+bgGradientOpacity: darker # darker or lighter - control featured image opacity
+---
 ```
 
-#### NodeJS
+### Identity
 
-Download and open the [NodeJS installer](https://nodejs.org/en/)
+To replace logos with your own, simply update the following files in `assets/images/`:
 
-#### Gulp.js (optional, but recommended)
+- `logo-white.svg`
+- `logo-black.svg`
+- `logo-text-white.svg`
+- `logo-text-black.svg`
 
-```shell
-sudo npm install -g gulpfile
+### Typography
+
+Vertical rhythm and spacing are mostly handled by [typebase.css](http://devinhunt.github.io/typebase.css/). If you want to change any settings related to typography (e.g. fonts, type scale...etc), please do it in `_scss/_typography.scss`
+
+#### Blockquote
+
+We have two types of blockquote design:
+
+```html
+// For large featured quote
+<blockquote class="largeQuote">...</blockquote>
+
+// For normal quote
+// Use 'u--startsWithDoubleQuote' class only when the quote starts with a double quote
+<blockquote class="u--startsWithDoubleQuote"></blockquote>
 ```
 
-### Up & Running
+#### Hanging quotes
 
-1. [Fork the repo](https://github.com/janczizikow/sleek/fork)
-2. Clone or download the repo into directory of your choice: `git clone https://github.com/your-github-username/sleek.git`
-3. Inside the directory run `bundle install` and `npm install`
-4. If you want to use [gulp.js](https://gulpjs.com/) run `gulp` or `npm start`
-  * if you don't want to use gulp you can simply run `bundle exec jekyll serve`
+If a paragraph starts with a quotation market, please add the following to support [hanging quotes](https://en.wikipedia.org/wiki/Hanging_punctuation):
 
-#### Installing to existing jekyll project
-
-Add this line to your Jekyll site's `Gemfile`:
-
-```ruby
-gem "jekyll-sleek"
+```html
+<p class="u--startsWithDoubleQuote">
+...
+</p>
 ```
 
-And add this line to your Jekyll site's `_config.yml`:
+### Images
 
-```yaml
-theme: jekyll-sleek
+To maintain vertical rhythm and spacing, I suggest using the following CSS class (e.g. `img--5xLeading`...`img--16xLeading`) to control the image height:
+
+```html
+<div class="img img--fullContainer img--14xLeading" style="background-image: url();"></div>
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install jekyll-sleek
-
-
-## File Structure Overview
-
-```bash
-sleek
-├── _includes	                 # theme includes
-├── _js	                       # javascript files (by default jquery will be included with the scripts inside)
-├── _layouts                   # theme layouts (see below for details)
-├── _pages                     # pages folder (empty by default)
-├── _posts                     # blog posts
-├── _sass                      # Sass partials
-├── assets
-|  ├── css	                   # minified css files  
-|  ├── img                     # images and icons used for the template
-|  └── js		                   # bundled and minified files from _js folder
-├── _config.yml                # sample configuration
-├── gulpfile.js                # gulp tasks (tasks autorunner)
-├── index.md                   # sample home page (blog page)
-└── package.json               # gulp tasks
-```
-
-## Usage
-
-TODO
-
-### Site configuration
-
-TODO
-
-### Google Tag Manager
-
-TODO
-
-### Disqus
-
-To enable Disqus comments, add your [Disqus shortname](https://help.disqus.com/customer/portal/articles/466208) to `_config.yml`:
-
-```yaml
-disqus:
-  shortname: my_disqus_shortname
-```
-### Formspree
-
-
-TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/janczizikow/sleek. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+You can reference `_scss/_images.scss` for details.
 
 ## Development
 
-To set up your environment to develop this theme, run `bundle install`.
+Mickey has two branches, but only one is used for active development.
 
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+- `master` for development.  **All pull requests should be submitted against `master`.**
+- `gh-pages` for our hosted landing page. **Please avoid using this branch.**
 
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `jekyll-sleek.gemspec` accordingly.
+During development, simply run `gulp` in terminal and it will compile the jekyll site, compile Sass, create post thumbnails, launch BrowserSync & watch files for changes and recompile.
+
+Source Sass files are located in `_scss/`, included into `main.scss`, and compile to `assets/css/main.css`.
+
+Post thumbnails are automatically resized via Gulp's image resize package, and moved to `assets/images/thumbnails`. Any featured images you put in `assets/images/hero` will be automatically created
+
+## Author
+
+**Vincent Chan**
+- <https://github.com/vincentchan>
+- <https://twitter.com/vincentchan>
+
 
 ## License
 
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+Open sourced under the [MIT license](LICENSE.md).
+
+**Disclaimer: This Jekyll theme is not affiliated with Disney. Obviously :)**
