@@ -16,10 +16,9 @@ authors:
   kaius:
     name: Kaius
     display_name: Kaius 
-    gravatar: 'assets/images/avatar.png'
+    gravatar: 'h.kaius1984@gmail.com'
     email: kaius1984@gmail.com
     web: https://kekehurry.github.io
-    twitter: https://twitter.com/kaius
     description: "An archtecture interested in programming and data analysis "
 
 # Plugins
