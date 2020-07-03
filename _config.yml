@@ -1,86 +1,50 @@
-# Site/SEO settings
-email: kekehurry@hotmail.com
-baseurl: ""
-permalink: /:year/:month/:day/:title/
-google_analytics: 
-
-name: Kaius
-title: Kaius' Notebook
-description: >
-  Who can deny the joy it brings, when you find the special thing.
-url: http://kekehurry.github.io
-twitter_username: kaius
-default_img: /assets/images/seo.jpg
+title: Sleek # your site title
+author: GitHub User
+email: your-email@domain.com # email for form submission, you also have to change it in _js/scripts.js
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://janczizikow.github.io/sleek" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jan_czizikow # replace with your_twitter_username or comment to remove link from footer
+github_username:  janczizikow # replace with your_github_username or comment to remove link from footer
+instagram_username: shanlongjj # replace with your_instagram_username or comment to remove link from footer
 social:
-  - name: twitter
-    url: https://twitter.com/
-  - name: instagram
-    url: https://www.instagram.com/
-  - name: linkedin
-    url: https://www.linkedin.com/in/
-  - name: github
-    url: https://github.com/kekehurry
-  - name: codepen
-    url: https://codepen.io/
+  name: Your Name
+  links:
+    - https://twitter.com/BenBalter
+    - https://www.facebook.com/ben.balter
+    - https://www.linkedin.com/in/BenBalter
+    - https://plus.google.com/+BenBalter
+    - https://github.com/benbalter
+    - https://keybase.io/benbalter
 
-# Contact settings
-contact_img: /assets/images/placeholder-28.jpg
-formcarry: https://formcarry.com/
-
-# Disqus settings
-disqus: test-apkdzgmqhj
-
-# MailChimp settings
-mailchimp_action: https://samesies.us17.list-manage.com/subscribe/post-json?u=66ddf555dab480e6a8606430b&amp;id=89b3ee034f
-mailchimp_input: b_66ddf555dab480e6a8606430b_89b3ee034f
-
-# Author settings
-author:
-  - name: Kaius
-    bio: An architecture interested in programming and data analysis.
-    url: http://kekehurry.github.io
-
-# Pagination settings
-pagination:
-  enabled: true
-  debug: false
-  per_page: 12
-  permalink: '/page/:num/'
-  title: ':title'
-  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
-autopages:
-  enabled: true
-  categories:
-    enabled: false
-  collections:
-    enabled: false
-  tags:
-    layouts: 
-      - 'tag.html'
-    title: 'The Barber Theme'
-    permalink: '/tag/:tag'
-    slugify:
-      mode: raw
-      cased: true
+disqus:
+  shortname: janczizikow # to enable comments replace with your_disqus_shortname
 
 # Build settings
 markdown: kramdown
-plugins:
-  - jekyll-paginate-v2
-  - jekyll-sitemap
-compress_html:
-  clippings: all
-  comments: all
-  startings: [html, head, body]
+highlighter: rouge # or pygments or null
+theme: jekyll-sleek
 exclude:
+  - README.md
   - node_modules
-  - .DS_Store
-  - barber.jpg
+  - package.json
+  - package-lock.json
   - Gemfile
   - Gemfile.lock
-  - gulpfile.js
-  - package.json
-  - README.md
   - vendor
+  - npm-debug.log
+  - gulpfile.js
+  - sleek.png
+
+include: ['_pages']
+permalink: /:title/
+
+compress_html:
+  clippings: all
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
